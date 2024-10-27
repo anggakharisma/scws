@@ -3,3 +3,4 @@ import { Database } from "bun:sqlite"
 
 const sqlite = new Database("sqlite.db")
 export const db = drizzle(sqlite)
+console.log(db)
