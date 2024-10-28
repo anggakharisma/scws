@@ -14,7 +14,7 @@ export default function Home() {
           <button className='bg-[#061D3D] text-white rounded-xl p-6 py-2 text-left self-start my-4'>Enroll Now</button>
         </div>
         <Image className='rounded-[20px]' src={Hero} alt='hero images with students talking as discussing lesson' />
-        <div className='absolute shadow-lg -bottom-[4rem] lg:-bottom-14 lg:left-20 flex left-[50%] -translate-x-1/2 lg:translate-x-0'>
+        <div className='absolute shadow-lg -bottom-[4rem] lg:-bottom-14 lg:left-24 flex left-[50%] -translate-x-1/2 lg:translate-x-0'>
           {
             [
               {
@@ -28,9 +28,13 @@ export default function Home() {
               {
                 count: "31+",
                 title: "Courses"
+              },
+              {
+                count: "21+",
+                title: "Courses"
               }
             ].map((item, id) => {
-              return <div key={id} className='lg:flex flex-col items-center bg-white p-4 lg:p-6'>
+              return <div key={id} className='lg:flex flex-col items-center bg-white p-6 lg:p-6'>
                 <h3 className='font-bold'>{item.count}</h3>
                 <p>{item.title}</p>
               </div>
@@ -59,9 +63,7 @@ export default function Home() {
         </div>
       </div>
 
-
-      <div className='mt-0 gap-8 w-10/12 mx-auto mb-80 grid grid-cols-4 bg-primary justify-between items-center place-items-center
-      '>
+      <div className='mt-0 gap-8 w-10/12 mx-auto mb-80 grid grid-cols-4 bg-primary justify-between items-center place-items-center'>
         <div className='p-8'>
           <p>lorem</p>
         </div>
