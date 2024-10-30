@@ -4,7 +4,6 @@ import Ignite from '@/app/assets/images/ignites.jpg';
 import Image from 'next/image';
 
 export default function Home() {
-
   return (
     <div className="max-w-max w-full lg:w-10/12 px-4 p-2 lg:px-8 mx-auto">
       <div className="bg-primary lg:pl-10 pb-10 lg:pb-0 flex flex-col-reverse lg:flex-row justify-between rounded-2xl relative mb-40">
@@ -63,31 +62,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='mt-0 gap-8 w-10/12 mx-auto mb-80 grid grid-cols-4 bg-primary justify-between items-center place-items-center'>
-        <div className='p-8'>
-          <p>lorem</p>
+      <div className='mt-0 gap-0 w-10/12 mx-auto mb-80 grid grid-cols-4 bg-primary justify-between items-center'>
+        <div className='p-8 bg-secondary h-56 flex flex-col justify-between'>
+          <h3 className='text-primary font-bold text-3xl'>Activity</h3>
+          <p className='text-white self-end items-end'>Activity</p>
         </div>
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-        <div className='p-8'>
-          <p>lorem</p>
-        </div>
-        <div className='p-8'>
-          <p>lorem</p>
+        <div className='p-8 bg-secondary h-56 flex flex-col justify-between'>
+          <h3 className='text-primary font-bold text-3xl'>Activity</h3>
+          <p className='text-white self-end items-end'>Activity</p>
         </div>
       </div>
     </div>
