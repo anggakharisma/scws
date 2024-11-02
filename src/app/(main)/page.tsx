@@ -114,7 +114,7 @@ export default function Home() {
           <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
           <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
         </InfoCardImage>
-        <div className='p-8 bg-white min-h-56 flex justify-center items-center hover:cursor-pointer'>
+        <div className='p-8 bg-white min-h-56 flex justify-center items-center hover:cursor-pointer shadow-md'>
           <h3 className='text-black font-bold md:text-3xl text-xl'>GRADUATES</h3>
         </div>
 
@@ -128,8 +128,6 @@ export default function Home() {
           <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
         </div>
       </div>
-
-      <h1>FOOTER</h1>
-    </div >
+    </div>
   )
 }
