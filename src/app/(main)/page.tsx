@@ -5,6 +5,8 @@ import Career from '@/app/assets/images/career.jpg';
 import Hero from '@/app/assets/images/hero.jpg';
 import Ignite from '@/app/assets/images/ignites.jpg';
 import Teacher from '@/app/assets/images/teachers.jpg';
+import Activity from '@/app/assets/icons/activity.svg'
+import Graduates from '@/app/assets/icons/graduates.svg'
 import Image from 'next/image';
 
 const InfoCardImage = ({
@@ -97,7 +99,7 @@ export default function Home() {
       <div className='md-0 md:mt-24 gap-0 w-10/12 mx-auto min-w-40 mb-20 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center '>
         <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
           <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
-          <p className='text-white self-end items-end'>Activity</p>
+          <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon'/>
         </div>
 
         <InfoCardImage image={ArtsCulture.src} classCustom='p-8 min-h-56 w-full h-full flex items-center col-span-0 lg:col-span-2 relative hover:cursor-pointer bg-cover bg-center'>
@@ -114,8 +116,9 @@ export default function Home() {
           <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
           <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
         </InfoCardImage>
-        <div className='p-8 bg-white min-h-56 flex justify-center items-center hover:cursor-pointer shadow-md'>
-          <h3 className='text-black font-bold md:text-3xl text-xl'>GRADUATES</h3>
+        <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer shadow-md gap-2 px-16'>
+          <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon'/>
+          <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
         </div>
 
 
