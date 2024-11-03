@@ -8,29 +8,9 @@ import Teacher from '@/app/assets/images/teachers.jpg';
 import Activity from '@/app/assets/icons/activity.svg'
 import Graduates from '@/app/assets/icons/graduates.svg'
 import Image from 'next/image';
+import InfoCardImage from './InfoCardImage';
 
-const InfoCardImage = ({
-  children,
-  image,
-  classCustom
-}: {
-  children: React.ReactNode,
-  image: string,
-  classCustom: string
-}) => {
-  return (
-    <div
-      className={`${classCustom} bg-cover bg-center bg-no-repeat hover:border-2 hover:border-primary`}
-      style={{
-        backgroundImage: `url(${image})`,
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      {children}
-    </div>
-  )
-}
+// !TODO: add some animation on load and hover on activity card
 
 export default function Home() {
   return (
@@ -99,7 +79,7 @@ export default function Home() {
       <div className='md-0 md:mt-24 gap-0 w-10/12 mx-auto min-w-40 mb-20 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center '>
         <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
           <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
-          <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon'/>
+          <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon' />
         </div>
 
         <InfoCardImage image={ArtsCulture.src} classCustom='p-8 min-h-56 w-full h-full flex items-center col-span-0 lg:col-span-2 relative hover:cursor-pointer bg-cover bg-center'>
@@ -117,7 +97,7 @@ export default function Home() {
           <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
         </InfoCardImage>
         <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer shadow-md gap-2 px-16'>
-          <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon'/>
+          <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon' />
           <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
         </div>
 
