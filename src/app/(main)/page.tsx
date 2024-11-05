@@ -76,39 +76,55 @@ export default function Home() {
       {
         // Info Section
       }
-      <div className='md-0 md:mt-24 gap-0 w-10/12 mx-auto min-w-40 mb-20 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center '>
-        <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
-          <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
-          <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon' />
+      <div className='w-10/12 mx-auto py-4'>
+        <div className='md-0 md:mt-24 gap-0 w min-w-40 mb-10 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center relative'>
+          <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
+            <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
+            <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon' />
+          </div>
+
+          <InfoCardImage
+            span={2}
+            description={<p className='text-white bg-red-400'>Lorem</p>}
+            image={ArtsCulture.src} classCustom='p-8 min-h-56 w-full h-full flex items-center relative hover:cursor-pointer bg-cover bg-center'>
+            <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
+            <h3 className='text-white md:text-3xl text-xl font-bold z-10'>{'ARTS & CULTURE'}</h3>
+          </InfoCardImage>
+
+          <InfoCardImage
+            image={Teacher.src}
+            description={<p className='text-white bg-red-400'>Lorem</p>}
+            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
+            <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
+            <h3 className='text-white z-10 font-bold md:text-3xl text-xl'>TEACHERS</h3>
+          </InfoCardImage>
+
+          <InfoCardImage
+            description={<p className='text-white bg-red-400'>Lorem</p>}
+            image={Awards.src}
+            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
+            <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
+            <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
+          </InfoCardImage>
+          <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer shadow-md gap-2 px-16'>
+            <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon' />
+            <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
+          </div>
+
+          <InfoCardImage
+            description={<p>Lorem</p>}
+            image={Career.src}
+            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
+            <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full hover:cursor-pointer'></div>
+            <h3 className='text-white font-bold md:text-3xl text-xl z-10'>CARRERS</h3>
+          </InfoCardImage>
+
+          <div className='p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer'>
+            <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
+          </div>
         </div>
-
-        <InfoCardImage image={ArtsCulture.src} classCustom='p-8 min-h-56 w-full h-full flex items-center col-span-0 lg:col-span-2 relative hover:cursor-pointer bg-cover bg-center'>
-          <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-          <h3 className='text-white md:text-3xl text-xl font-bold z-10'>{'ARTS & CULTURE'}</h3>
-        </InfoCardImage>
-
-        <InfoCardImage image={Teacher.src} classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
-          <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-          <h3 className='text-white z-10 font-bold md:text-3xl text-xl'>TEACHERS</h3>
-        </InfoCardImage>
-
-        <InfoCardImage image={Awards.src} classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
-          <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-          <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
-        </InfoCardImage>
-        <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer shadow-md gap-2 px-16'>
-          <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon' />
-          <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
-        </div>
-
-
-        <InfoCardImage image={Career.src} classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
-          <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full hover:cursor-pointer'></div>
-          <h3 className='text-white font-bold md:text-3xl text-xl z-10'>CARRERS</h3>
-        </InfoCardImage>
-
-        <div className='p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer'>
-          <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
+        <div>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, aperiam debitis? Fuga at, soluta deleniti harum facilis laudantium dolorum! Corporis vero consequatur adipisci dolorem nostrum porro optio veniam cupiditate molestiae.</p>
         </div>
       </div>
     </div>
