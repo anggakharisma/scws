@@ -1,4 +1,3 @@
-"use client"
 import ArtsCulture from '@/app/assets/images/arts_and_culture.jpg';
 import Awards from '@/app/assets/images/awards.jpg';
 import Career from '@/app/assets/images/career.jpg';
@@ -123,6 +122,10 @@ export default function Home() {
             <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
           </div>
         </div>
+      </div>
+
+      <div>
+        <p>NEW SECTION FOR Activity Information</p>
       </div>
     </div>
   )
