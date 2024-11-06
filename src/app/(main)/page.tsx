@@ -14,7 +14,7 @@ import InfoCardImage from './InfoCardImage';
 
 export default function Home() {
   return (
-    <div className="max-w-max w-full lg:w-10/12 px-4 p-2 lg:px-8 mx-auto">
+    <div className="">
       <div className="bg-primary lg:pl-10 pb-10 lg:pb-0 flex flex-col-reverse lg:flex-row justify-between rounded-2xl relative mb-40">
         <div className="w-full h-full rounded-3xl absolute bg-secondary left-0 -top-[10px] -z-10"></div>
         <div className="flex flex-col w-5/6 mt-8 lg:w-1/3 justify-center items-center mx-auto relative">
@@ -24,7 +24,7 @@ export default function Home() {
         <div className='w-full md:w-3/6'>
           <Image className='rounded-[20px]' src={Hero} alt='hero images with students talking as discussing lesson' />
         </div>
-        <div className='absolute shadow-lg -bottom-[4rem] lg:-bottom-14 lg:left-24 flex left-[50%] -translate-x-1/2 lg:translate-x-0'>
+        <div className='absolute -bottom-[4rem] lg:-bottom-14 lg:left-24 flex left-[50%] -translate-x-1/2 lg:translate-x-0'>
           {
             [
               {
@@ -76,7 +76,7 @@ export default function Home() {
       {
         // Info Section
       }
-      <div className='w-10/12 mx-auto py-4'>
+      <div className='w-10/12 mx-auto shadow-lg'>
         <div className='md-0 md:mt-24 gap-0 w min-w-40 mb-10 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center relative'>
           <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
             <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
@@ -106,7 +106,7 @@ export default function Home() {
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
             <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
           </InfoCardImage>
-          <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer shadow-md gap-2 px-16'>
+          <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer gap-2 px-16'>
             <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon' />
             <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
           </div>
@@ -122,9 +122,6 @@ export default function Home() {
           <div className='p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer'>
             <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
           </div>
-        </div>
-        <div>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, aperiam debitis? Fuga at, soluta deleniti harum facilis laudantium dolorum! Corporis vero consequatur adipisci dolorem nostrum porro optio veniam cupiditate molestiae.</p>
         </div>
       </div>
     </div>
