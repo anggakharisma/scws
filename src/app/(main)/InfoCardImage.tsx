@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 const InfoCardImage = ({
   children,
   image,
@@ -15,7 +13,7 @@ const InfoCardImage = ({
 }) => {
   return (
     <div
-      className={`${classCustom} col-span-1 lg:col-span-${span} bg-cover bg-center bg-no-repeat relative`}
+      className={`${classCustom} col-span-1 lg:col-span-${span} bg-cover bg-center bg-no-repeat relative hover:cursor-pointer`}
       style={{
         backgroundImage: `url(${image})`,
         width: "100%",

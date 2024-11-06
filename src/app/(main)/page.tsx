@@ -18,7 +18,7 @@ export default function Home() {
       <div className="bg-primary lg:pl-10 pb-10 lg:pb-0 flex flex-col-reverse lg:flex-row justify-between rounded-2xl relative mb-40">
         <div className="w-full h-full rounded-3xl absolute bg-secondary left-0 -top-[10px] -z-10"></div>
         <div className="flex flex-col w-5/6 mt-8 lg:w-1/3 justify-center mx-auto relative">
-          <h1 className="text-[#171717] md:text-3xl text-xl lg:text-5xl lg:leading-[4rem] font-bold w-5/6">Building Strong Mind Strong Community</h1>
+          <h1 className="text-[#171717] md:text-3xl text-3xl lg:text-5xl lg:leading-[4rem] font-bold w-5/6">Building Strong Mind Strong Community</h1>
           <button className='bg-[#061D3D] text-white rounded-xl p-6 py-2 text-left self-start my-4 hover:filter hover:invert transition-all'>Enroll Now</button>
         </div>
         <div className='w-full md:w-3/6'>
@@ -36,17 +36,17 @@ export default function Home() {
                 title: "Courses"
               },
               {
-                count: "31+",
-                title: "Courses"
+                count: "17+",
+                title: "Awards"
               },
               {
-                count: "21+",
-                title: "Courses"
+                count: "200+",
+                title: "students"
               }
             ].map((item, id) => {
               return <div key={id} className='lg:flex flex-col items-center bg-white p-4 py-6 lg:p-6'>
                 <h3 className='font-bold'>{item.count}</h3>
-                <p>{item.title}</p>
+                -/* 
               </div>
             })
           }
