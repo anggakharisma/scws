@@ -11,6 +11,7 @@ import InfoCardImage from './InfoCardImage';
 
 // !TODO: add some animation on load and hover on activity card
 
+console.log()
 export default function Home() {
   return (
     <div className="">
@@ -23,7 +24,7 @@ export default function Home() {
         <div className='w-full md:w-3/6'>
           <Image className='rounded-[20px]' src={Hero} alt='hero images with students talking as discussing lesson' />
         </div>
-        <div className='absolute -bottom-[4rem] lg:-bottom-14 lg:left-24 flex left-[50%] -translate-x-1/2 lg:translate-x-0'>
+        <div className='absolute -bottom-[4rem] lg:-bottom-14 flex left-1/2 lg:left-1/4  -translate-x-1/2 shadow-lg rounded-lg'>
           {
             [
               {
@@ -43,7 +44,7 @@ export default function Home() {
                 title: "students"
               }
             ].map((item, id) => {
-              return <div key={id} className='lg:flex flex-col items-center bg-white p-4 py-6 lg:p-6'>
+              return <div key={id} className='lg:flex flex-col items-center bg-white p-6 py-8 lg:p-8'>
                 <h3 className='font-bold'>{item.count}</h3>
                 {item.title}
               </div>

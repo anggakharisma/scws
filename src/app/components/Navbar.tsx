@@ -20,8 +20,7 @@ export default function Navbar() {
           <LinkItem name="About Us" href="/about-us" />
           <LinkItem name="Admission" href="/about-us" />
           <LinkItem name="Programs" href="/about-us" />
-          <LinkItem name="Teacher" href="/about-us" />
-          <LinkItem name="Parent & Students" href="/about-us" />
+          <LinkItem name="Accounts" href="/login" />
         </ul>
         <div></div>
       </div>
