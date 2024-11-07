@@ -21,8 +21,8 @@ export default function Home() {
           <h1 className="text-[#171717] md:text-3xl text-3xl lg:text-5xl lg:leading-[4rem] font-bold w-full text-center lg:text-left">Building Strong Mind Strong Community</h1>
           <button className='bg-[#061D3D] text-white rounded-xl p-6 py-2 text-left self-center lg:self-start my-4 hover:filter hover:invert transition-all'>Enroll Now</button>
         </div>
-        <div className='w-full md:w-3/6'>
-          <Image className='rounded-[20px]' src={Hero} alt='hero images with students talking as discussing lesson' />
+        <div className='w-full md:w-3/6 h-full bg-cover'>
+          <Image className='rounded-[16px]' src={Hero} alt='hero images with students talking as discussing lesson' sizes='100vw' />
         </div>
         <div className='absolute -bottom-[4rem] lg:-bottom-14 flex left-1/2 lg:left-1/4  -translate-x-1/2 shadow-lg rounded-lg'>
           {
