@@ -29,7 +29,8 @@ export default function LoginForm() {
       sx={{
         width: '100%',
         maxWidth: 400,
-        p: 4,
+        px: 4,
+        py: 8,
         border: '1px solid #ddd',
         borderRadius: 2,
         boxShadow: "2px 8px 10px rgba(0,0,0,0.09)"
@@ -68,6 +69,9 @@ export default function LoginForm() {
         error={!!errors.password}
         helperText={errors.password?.message}
         fullWidth
+        sx={{
+          mb: 4
+        }}
       />
 
       <Button type="submit" variant="contained" color="primary" fullWidth>

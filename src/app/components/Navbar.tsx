@@ -1,11 +1,17 @@
+"use client"
 import clsx from "clsx";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 const LinkItem = ({ name, href }: { name: string, href: string }) => {
+  const pathname = usePathname()
   return <li
-  className={clsx(
-    'text-sm text-black hover:cursor-pointer hover:text-primary'
-  )}
+    className={clsx(
+      {
+        'border-primary border-b-4': href === pathname
+      },
+      'text-md text-black hover:cursor-pointer hover:text-primary pb-1'
+    )}
   ><Link href={href}>{name}</Link></li>
 }
 
@@ -20,7 +26,7 @@ export default function Navbar() {
           <LinkItem name="About Us" href="/about-us" />
           <LinkItem name="Admission" href="/about-us" />
           <LinkItem name="Programs" href="/about-us" />
-          <LinkItem name="Accounts" href="/login" />
+          <LinkItem name="Account" href="/login" />
         </ul>
         <div></div>
       </div>

@@ -1,6 +1,9 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google';
+import NavUser from '@/app/components/user/Navbar'
+
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700']
@@ -21,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${roboto.className}`}
       >
+      <NavUser />
         <main>
           {children}
         </main>
