@@ -4,6 +4,7 @@ import { Box, Button, TextField, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { useState, useEffect } from 'react';
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -14,6 +15,11 @@ type FormData = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
   const router = useRouter()
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => {
+    setIsClient(true)
+
+  }, [])
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(loginSchema)
   });
