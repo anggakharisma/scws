@@ -1,16 +1,18 @@
+interface InfoCardImageProps {
+  children: React.ReactNode,
+  description: React.ReactNode,
+  image: string,
+  span?: number,
+  classCustom: string
+}
+
 const InfoCardImage = ({
   children,
   image,
   description,
   span = 1,
   classCustom
-}: {
-  children: React.ReactNode,
-  description: React.ReactNode,
-  image: string,
-  span?: number,
-  classCustom: string
-}) => {
+}: InfoCardImageProps) => {
   return (
     <div
       className={`${classCustom} col-span-1 lg:col-span-${span} bg-cover bg-center bg-no-repeat relative hover:cursor-pointer`}

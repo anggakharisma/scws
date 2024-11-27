@@ -65,7 +65,7 @@ export default function Home() {
             alt="ignites" />
         </div>
         <div className='p-0'>
-          <h1 className='text-4xl lg:text-5xl w-full lg:w-3/6 font-bold mb-8'>Where Education Ignites</h1>
+          <h1 className='text-4xl lg:text-5xl w-full lg:w-4/6 font-bold mb-8'>Where Education Ignites</h1>
           <p className='mb-8 text-lg leading-loose'>{"At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."}<br /><br />
 
             {"Here at SCWS, you'll be challenged to think critically, ask insightful questions, and delve deeper into subjects that spark your interest. We foster a collaborative environment where students learn from each other, share ideas, and build the confidence to express themselves."}
@@ -85,22 +85,24 @@ export default function Home() {
 
           <InfoCardImage
             span={2}
-            description={<p className='text-white bg-red-400'>Lorem</p>}
-            image={ArtsCulture.src} classCustom='p-8 min-h-56 w-full h-full flex items-center relative hover:cursor-pointer bg-cover bg-center'>
+            description={<p className='text-black'>Lorem</p>}
+            image={ArtsCulture.src}
+            classCustom='p-8 min-h-56 w-full h-full flex items-center relative hover:cursor-pointer'>
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
             <h3 className='text-white md:text-3xl text-xl font-bold z-10'>{'ARTS & CULTURE'}</h3>
           </InfoCardImage>
 
           <InfoCardImage
             image={Teacher.src}
-            description={<p className='text-white bg-red-400'>Lorem</p>}
-            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
+            description={<p className='text-black'>Lorem</p>}
+            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'
+          >
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
             <h3 className='text-white z-10 font-bold md:text-3xl text-xl'>TEACHERS</h3>
           </InfoCardImage>
 
           <InfoCardImage
-            description={<p className='text-white bg-red-400'>Lorem</p>}
+            description={<p className='text-white'>Lorem</p>}
             image={Awards.src}
             classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
@@ -127,6 +129,11 @@ export default function Home() {
 
       <div>
         <p>NEW SECTION FOR Activity Information</p>
+      </div>
+
+      <div className='mt-8 mb-40'>
+        <h1 className='text-4xl lg:text-3xl w-full lg:w-4/6 font-bold mb-8'>NEWS</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, voluptatem? Ipsa corporis magnam deserunt deleniti iste laborum eos ipsum. Perspiciatis aliquid exercitationem earum reiciendis veniam quos, ipsam voluptatibus? Voluptatem, modi.</p>
       </div>
     </div>
   )
