@@ -7,7 +7,7 @@ import Teacher from '@/app/assets/images/teachers.jpg';
 import Activity from '@/app/assets/icons/activity.svg'
 import Graduates from '@/app/assets/icons/graduates.svg'
 import Image from 'next/image';
-import InfoCardImage from './InfoCardImage';
+import InfoCardImage, { InfoDetailsText } from './InfoCardImage';
 
 // !TODO: add some animation on load and hover on activity card
 
@@ -66,8 +66,10 @@ export default function Home() {
         </div>
         <div className='p-0'>
           <h1 className='text-4xl lg:text-5xl w-full lg:w-4/6 font-bold mb-8'>Where Education Ignites</h1>
-          <p className='mb-8 text-lg leading-loose'>{"At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."}<br /><br />
+          <p className='font-light text-lg leading-loose indent-12'>{"At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."}<br />
 
+          </p>
+          <p className='font-light text-lg leading-loose indent-12'>
             {"Here at SCWS, you'll be challenged to think critically, ask insightful questions, and delve deeper into subjects that spark your interest. We foster a collaborative environment where students learn from each other, share ideas, and build the confidence to express themselves."}
           </p>
         </div>
@@ -79,50 +81,53 @@ export default function Home() {
       <div className='w-10/12 mx-auto shadow-lg'>
         <div className='md-0 md:mt-24 gap-0 w min-w-40 mb-10 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center relative'>
           <div className='p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer'>
-            <h3 className='text-primary font-bold md:text-3xl text-xl'>Activity</h3>
+            <h3 className='text-primary font-medium md:text-3xl text-xl'>Activity</h3>
             <Image className='self-end items-end' src={Activity} width={60} height={60} alt='activity icon' />
           </div>
 
+
+
           <InfoCardImage
             span={2}
-            description={<p className='text-black'>Lorem</p>}
             image={ArtsCulture.src}
-            classCustom='p-8 min-h-56 w-full h-full flex items-center relative hover:cursor-pointer'>
+            description={<p className='text-black'></p>}
+            classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'
+          >
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-            <h3 className='text-white md:text-3xl text-xl font-bold z-10'>{'ARTS & CULTURE'}</h3>
+            <InfoDetailsText>{'ARTS & CULUTRE'}</InfoDetailsText>
           </InfoCardImage>
 
           <InfoCardImage
             image={Teacher.src}
-            description={<p className='text-black'>Lorem</p>}
+            description={<p className='text-black'></p>}
             classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'
           >
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-            <h3 className='text-white z-10 font-bold md:text-3xl text-xl'>TEACHERS</h3>
+            <InfoDetailsText>TEACHERS</InfoDetailsText>
           </InfoCardImage>
 
           <InfoCardImage
-            description={<p className='text-white'>Lorem</p>}
+            description={<p className='text-white'></p>}
             image={Awards.src}
             classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full'></div>
-            <h3 className='text-white font-bold md:text-3xl text-xl z-10'>AWARDS</h3>
+            <InfoDetailsText>AWARDS</InfoDetailsText>
           </InfoCardImage>
           <div className='p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer gap-2 px-16'>
             <Image className='self-start' src={Graduates} width={24} height={24} alt='activity icon' />
-            <h3 className='text-black font-bold md:text-3xl text-3xl'>GRADUATES</h3>
+            <h3 className='text-black font-medium md:text-3xl text-3xl'>GRADUATES</h3>
           </div>
 
           <InfoCardImage
-            description={<p>Lorem</p>}
+            description={<p></p>}
             image={Career.src}
             classCustom='p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer'>
             <div className='bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full hover:cursor-pointer'></div>
-            <h3 className='text-white font-bold md:text-3xl text-xl z-10'>CARRERS</h3>
+            <h3 className='text-white font-medium md:text-3xl text-xl z-10'>CARRERS</h3>
           </InfoCardImage>
 
           <div className='p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer'>
-            <h3 className='text-secondary font-bold md:text-3xl text-xl'>GRADUATES</h3>
+            <h3 className='text-secondary font-medium md:text-3xl text-xl'>GRADUATES</h3>
           </div>
         </div>
       </div>
@@ -132,8 +137,8 @@ export default function Home() {
       </div>
 
       <div className='mt-8 mb-40'>
-        <h1 className='text-4xl lg:text-3xl w-full lg:w-4/6 font-bold mb-8'>NEWS</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, voluptatem? Ipsa corporis magnam deserunt deleniti iste laborum eos ipsum. Perspiciatis aliquid exercitationem earum reiciendis veniam quos, ipsam voluptatibus? Voluptatem, modi.</p>
+        <h1 className='text-4xl lg:text-3xl w-full lg:w-4/6 font-medium mb-8'>NEWS</h1>
+        <p></p>
       </div>
     </div>
   )

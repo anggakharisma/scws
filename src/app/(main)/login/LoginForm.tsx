@@ -1,7 +1,6 @@
 "use client"
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 const loginSchema = z.object({
@@ -12,8 +11,7 @@ const loginSchema = z.object({
 type FormData = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
-  const router = useRouter()
-  
+
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(loginSchema)
   });
@@ -31,23 +29,22 @@ export default function LoginForm() {
           width: '100%',
           maxWidth: 400,
           px: 4,
-          py: 8,
+          py: 4,
           border: '1px solid #ddd',
           borderRadius: 2,
           boxShadow: "2px 8px 10px rgba(0,0,0,0.09)"
         }}
       >
-        <p onClick={() => router.back()} className='absolute -right-4 -top-4 bg-red-500 text-white font-bold flex justify-center items-center rounded-full w-10 h-10 text-center hover:cursor-pointer'>
-          X
-        </p>
         <Box
           display="flex"
           flexDirection='column'
-          gap={1}
+          gap={0}
         >
-          <h1 className="text-3xl font-bold text-primary">SCWS</h1>
-          <Typography variant="h6" gutterBottom>
-            Enter your credentials
+          <Typography align='center' variant="h6" gutterBottom>
+            Enter Your Credentials
+          </Typography>
+          <Typography align='center' variant="body1" gutterBottom>
+            Welcome back
           </Typography>
         </Box>
         <TextField
