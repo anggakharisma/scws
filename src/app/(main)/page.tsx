@@ -69,7 +69,7 @@ export default function Home() {
           <p className='font-light text-lg leading-loose indent-12'>{"At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."}<br />
 
           </p>
-          <p className='font-light text-lg leading-loose indent-12 mt-12'>
+          <p className='font-light text-lg leading-loose indent-12 mt-4'>
             {"Here at SCWS, you'll be challenged to think critically, ask insightful questions, and delve deeper into subjects that spark your interest. We foster a collaborative environment where students learn from each other, share ideas, and build the confidence to express themselves."}
           </p>
         </div>
