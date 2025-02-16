@@ -14,7 +14,7 @@ import InfoCardImage, { InfoDetailsText } from './InfoCardImage';
 console.log()
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full mt-8">
       <div className="bg-primary lg:pl-10 pb-10 lg:pb-0 flex flex-col-reverse lg:flex-row justify-between rounded-2xl relative mb-40">
         <div className="w-full h-full rounded-3xl absolute bg-secondary left-0 -top-[10px] -z-10"></div>
         <div className="flex flex-col w-5/6 mt-8 lg:w-1/3 justify-center items-center mx-auto relative">
@@ -69,7 +69,7 @@ export default function Home() {
           <p className='font-light text-lg leading-loose indent-12'>{"At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."}<br />
 
           </p>
-          <p className='font-light text-lg leading-loose indent-12'>
+          <p className='font-light text-lg leading-loose indent-12 mt-12'>
             {"Here at SCWS, you'll be challenged to think critically, ask insightful questions, and delve deeper into subjects that spark your interest. We foster a collaborative environment where students learn from each other, share ideas, and build the confidence to express themselves."}
           </p>
         </div>

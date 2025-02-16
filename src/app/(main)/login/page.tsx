@@ -7,6 +7,7 @@ const LoginPage: React.FC = () => {
     <Box
       display="flex"
       justifyContent="center"
+
     >
       <LoginForm />
     </Box>

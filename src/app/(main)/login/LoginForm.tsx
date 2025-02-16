@@ -3,22 +3,24 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { login, signout, signup } from './action';
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(8, 'Password must be at least 8 characters long'),
 });
 
-type FormData = z.infer<typeof loginSchema>;
+export type FormDataCustom = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors } } = useForm<FormDataCustom>({
     resolver: zodResolver(loginSchema)
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const onSubmit = async (data: FormDataCustom) => {
+    await login(data)
   };
+
   return (
     <>
       <Box
@@ -28,6 +30,7 @@ export default function LoginForm() {
         sx={{
           width: '100%',
           maxWidth: 400,
+          mt: 8,
           px: 4,
           py: 4,
           border: '1px solid #ddd',
@@ -40,11 +43,8 @@ export default function LoginForm() {
           flexDirection='column'
           gap={0}
         >
-          <Typography align='center' variant="h6" gutterBottom>
-            Enter Your Credentials
-          </Typography>
           <Typography align='center' variant="body1" gutterBottom>
-            Welcome back
+            Welcome Back
           </Typography>
         </Box>
         <TextField
@@ -72,10 +72,15 @@ export default function LoginForm() {
           }}
         />
 
-        <Button type="submit" variant="contained" color="primary" fullWidth>
+        <Button type="submit" variant="outlined" color="primary" fullWidth>
           Login
         </Button>
       </Box>
+      <Button type="button" variant="outlined" color="primary" fullWidth onClick={async () => {
+        await signout()
+      }}>
+        Signout
+      </Button>
     </>
   )
 }
