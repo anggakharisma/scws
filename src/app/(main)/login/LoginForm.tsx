@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { login, signout, signup } from './action';
+import { login } from './action';
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(8, 'Password must be at least 8 characters long'),
@@ -35,7 +35,7 @@ export default function LoginForm() {
           py: 4,
           border: '1px solid #ddd',
           borderRadius: 2,
-          boxShadow: "2px 8px 10px rgba(0,0,0,0.09)"
+          boxShadow: "2px 8px 10px rgba(0,0,0,0.04)"
         }}
       >
         <Box
@@ -43,9 +43,7 @@ export default function LoginForm() {
           flexDirection='column'
           gap={0}
         >
-          <Typography align='center' variant="body1" gutterBottom>
-            Welcome Back
-          </Typography>
+          <Typography align='center' variant="h4" gutterBottom>SIGN IN</Typography>
         </Box>
         <TextField
           autoFocus
@@ -72,15 +70,10 @@ export default function LoginForm() {
           }}
         />
 
-        <Button type="submit" variant="outlined" color="primary" fullWidth>
+        <Button className="bg-secondary text-white font-medium" type="submit" variant="contained" color="primary" size='large' fullWidth>
           Login
         </Button>
       </Box>
-      <Button type="button" variant="outlined" color="primary" fullWidth onClick={async () => {
-        await signout()
-      }}>
-        Signout
-      </Button>
     </>
   )
 }
