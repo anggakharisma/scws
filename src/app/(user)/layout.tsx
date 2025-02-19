@@ -24,10 +24,12 @@ export default function RootLayout({
       <body
         className={`${roboto.className}`}
       >
-      <NavUser />
-        <main>
-          {children}
-        </main>
+        <div>
+          <NavUser />
+          <main>
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

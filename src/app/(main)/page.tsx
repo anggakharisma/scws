@@ -64,17 +64,18 @@ export default function Home() {
       </div>
 
       <div className="mt-24 flex flex-col lg:flex-row gap-8 w-10/12 mx-auto mb-12">
-        <div className="bg-red-400 w-full h-[480px] relative">
-          <div className="absolute w-full h-full -top-4 -left-4 bg-primary"></div>
-          <div className="absolute w-full h-full -top-8 -left-8 bg-secondary -z-10"></div>
+        <div className="w-4/6 h-[480px] relative rounded-lg">
+          <div className="absolute w-full h-full -top-4 -left-4 bg-primary rounded-lg"></div>
+          <div className="absolute w-full h-full -top-8 -left-8 bg-secondary -z-10 rounded-lg"></div>
           <Image
             src={Ignite}
+            className="rounded-lg"
             fill={true}
             style={{ objectFit: "cover" }}
             alt="ignites"
           />
         </div>
-        <div className="p-0">
+        <div className="p-0 w-full">
           <h1 className="text-4xl lg:text-5xl w-full lg:w-4/6 font-bold mb-8">
             Where Education Ignites
           </h1>
@@ -95,7 +96,7 @@ export default function Home() {
       {
         // Info Section
       }
-      <div className="w-10/12 mx-auto shadow-lg">
+      <div className="w-11/12 mx-auto shadow-lg bg-white">
         <div className="md-0 md:mt-24 gap-0 w min-w-40 mb-10 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center relative">
           <div className="p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer">
             <h3 className="text-primary font-medium md:text-3xl text-xl">
@@ -169,11 +170,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <p>NEW SECTION FOR Activity Information</p>
-      </div>
-
-      <div className="mt-8 mb-40">
+      <div className="w-11/12 mx-auto">
         <h1 className="text-4xl lg:text-3xl w-full lg:w-4/6 font-medium mb-8">
           NEWS
         </h1>

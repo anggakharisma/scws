@@ -3,6 +3,8 @@ import { Roboto } from 'next/font/google';
 import Navbar from "@/app/components/Navbar";
 import "@/app/globals.css";
 import Footer from "../components/Footer";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "@/theme";
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700']
@@ -19,16 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${roboto.className}`}
-      >
-        <Navbar />
-        <main className="mt-4 min-h-screen w-11/12 md:w-3/4 mx-auto">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <ThemeProvider theme={theme}>
+      <html lang="en">
+        <body
+          className={`${roboto.className}`}
+        >
+          <Navbar />
+          <main className="mt-4 min-h-screen w-11/12 md:w-3/4 mx-auto">
+            {children}
+          </main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

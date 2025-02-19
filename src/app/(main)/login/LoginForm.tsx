@@ -35,6 +35,7 @@ export default function LoginForm() {
           py: 4,
           border: '1px solid #ddd',
           borderRadius: 2,
+          backgroundColor: "white",
           boxShadow: "2px 8px 10px rgba(0,0,0,0.04)"
         }}
       >
@@ -43,7 +44,8 @@ export default function LoginForm() {
           flexDirection='column'
           gap={0}
         >
-          <Typography align='center' variant="h4" gutterBottom>SIGN IN</Typography>
+          <Typography align='left' variant="h4" gutterBottom>Sign In</Typography>
+          <Typography align='left' variant="body1" gutterBottom>Sign In</Typography>
         </Box>
         <TextField
           autoFocus
