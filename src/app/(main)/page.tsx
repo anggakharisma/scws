@@ -76,10 +76,10 @@ export default function Home() {
           />
         </div>
         <div className="p-0 w-full">
-          <h1 className="text-4xl lg:text-5xl w-full lg:w-4/6 font-bold mb-8">
+          <h1 className="text-4xl lg:text-5xl w-full lg:w-5/6 font-bold mb-8">
             Where Education Ignites
           </h1>
-          <p className="font-light text-lg leading-loose indent-12">
+          <p className="font-light text-lg leading-loose indent-8">
             {
               "At SCWS, education isn't just about memorizing facts and figures. It's about igniting a passion for learning that will stay with you long after you graduate. Our classrooms are vibrant hubs of curiosity and exploration, where teachers act as guides, mentors, and fellow explorers on the journey of knowledge."
             }

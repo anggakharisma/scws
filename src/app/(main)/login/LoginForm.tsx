@@ -3,7 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { login } from './action';
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(8, 'Password must be at least 8 characters long'),
@@ -18,7 +17,8 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: FormDataCustom) => {
-    await login(data)
+    console.log(data)
+    // await login(data)
   };
 
   return (
@@ -45,7 +45,7 @@ export default function LoginForm() {
           gap={0}
         >
           <Typography align='left' variant="h4" gutterBottom>Sign In</Typography>
-          <Typography align='left' variant="body1" gutterBottom>Sign In</Typography>
+          <Typography align='left' variant="body1" gutterBottom>Welcome back</Typography>
         </Box>
         <TextField
           autoFocus
