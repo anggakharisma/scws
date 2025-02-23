@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Roboto } from 'next/font/google';
 import Navbar from "@/app/components/Navbar";
 import "@/app/globals.css";
-import Footer from "../components/Footer";
-import { ThemeProvider } from "@mui/material";
 import { theme } from "@/theme";
+import { ThemeProvider } from "@mui/material";
+import type { Metadata } from "next";
+import { Roboto } from 'next/font/google';
+import Footer from "../components/Footer";
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700']

@@ -1,12 +1,15 @@
 import "@/app/globals.css";
+import { theme } from "@/theme";
+import {
+    ThemeProvider
+} from "@mui/material";
 import type { Metadata } from "next";
-import { Roboto } from 'next/font/google';
-import NavUser from '@/app/components/user/Navbar'
-
+import { Roboto } from "next/font/google";
+import MainWrapper from "../components/MainWrapper";
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700']
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,17 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${roboto.className}`}
-      >
-        <div>
-          <NavUser />
-          <main>
+    <ThemeProvider theme={theme}>
+      <html lang="en">
+        <body className={`${roboto.className}`}>
+          <MainWrapper>
             {children}
-          </main>
-        </div>
-      </body>
-    </html>
+          </MainWrapper>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

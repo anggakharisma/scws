@@ -3,10 +3,10 @@ import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const usersTable = sqliteTable("users", {
     id: int().primaryKey({ autoIncrement: true }),
+    supabase_id: text("supabase_id").notNull().unique(),
     name: text().notNull(),
-    password: text(),
     email: text().notNull().unique(),
-    userType: int().notNull(),
+    userType: text().default('students'),
     createdAt: text("created_at")
         .notNull()
         .default(sql`(CURRENT_TIMESTAMP)`)
@@ -38,6 +38,3 @@ export const rolesUserTable = sqliteTable('roles_users', {
     role_id: text().notNull(),
     user_id: text().notNull(),
 })
-
-
-

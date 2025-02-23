@@ -9,21 +9,15 @@ import { FormDataCustom } from './LoginForm'
 export async function login(formData: FormDataCustom) {
     const supabase = await createClient()
 
-    // type-casting here for convenience
-    // in practice, you should validate your inputs
-    const data = {
-        email: formData.email,
-        password: formData.password,
-    }
 
-    const { error } = await supabase.auth.signInWithPassword(data)
+    const { error } = await supabase.auth.signInWithPassword(formData)
 
     if (error) {
         redirect('/error')
     }
 
     revalidatePath('/', 'layout')
-    redirect('/')
+    redirect('/portals/dashboard')
 }
 
 export async function signup(formData: FormDataCustom) {

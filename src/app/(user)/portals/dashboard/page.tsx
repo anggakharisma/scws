@@ -1,5 +1,7 @@
+import { Typography } from "@mui/material";
+
 export default function DashboardPage() {
   return (
-    <h1>FORM</h1>
+    <Typography variant="h5">Welcome back user</Typography>
   )
 }
