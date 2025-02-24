@@ -1,10 +1,13 @@
 "use client"
+import { createClient } from "@/utils/supabase/client";
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from "react";
 
 const LinkItem = ({ name, href }: { name: string, href: string }) => {
   const pathname = usePathname()
+
 
   return <li
     className={clsx(
@@ -17,6 +20,18 @@ const LinkItem = ({ name, href }: { name: string, href: string }) => {
 }
 
 export default function Navbar() {
+  const [user, setUser] = useState<any>(null)
+  const supabase = createClient();
+
+  useEffect(() => {
+    supabase.auth.getUser().then(user => {
+      setUser(user.data.user)
+    })
+
+  }, [supabase.auth])
+
+  console.log(user)
+
   return (
     <header className="w-full py-4 flex shadow-md sticky bg-white">
       <div className="w-full md:w-10/12 mx-auto flex items-center justify-between gap-8 py-0 px-8 lg:px-16">
@@ -26,7 +41,12 @@ export default function Navbar() {
           <LinkItem name="About Us" href="/about-us" />
           <LinkItem name="Admission" href="/admission" />
           <LinkItem name="Programs" href="/programs" />
-          <LinkItem name="Portal" href="/login" />
+          <LinkItem name="Programs" href="/programs" />
+          {
+            user ?
+              <LinkItem name="Portals" href="/portals/dashboard" /> :
+              <LinkItem name="Login" href="/login" />
+          }
         </ul>
         <div></div>
       </div>

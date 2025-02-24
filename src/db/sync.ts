@@ -14,9 +14,10 @@ const syncSupabase = async () => {
 }
 
 syncSupabase().then(async d => {
-    console.log("___")
-    const x = await d.auth.admin.listUsers()
-    x.data.users.forEach(async user => {
+    const supabaseUsers = await d.auth.admin.listUsers()
+    console.log("Syncing data users")
+
+    supabaseUsers.data.users.forEach(async user => {
         if (user.id && user.email)
             await db.insert(usersTable).values({
                 supabase_id: user.id,

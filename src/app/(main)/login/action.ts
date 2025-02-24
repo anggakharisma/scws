@@ -6,17 +6,23 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 import { FormDataCustom } from './LoginForm'
 
-export async function login(formData: FormDataCustom) {
+export async function login(prevState: any, formData: FormData) {
     const supabase = await createClient()
 
 
-    const { error } = await supabase.auth.signInWithPassword(formData)
+    const { error } = await supabase.auth.signInWithPassword({
+        email: formData.get('email')!.toString(),
+        password: formData.get('password')!.toString(),
+    })
 
     if (error) {
-        redirect('/error')
+        return {
+            message: "Email or password might be wrong. If you're not registered please contact us.",
+        }
     }
 
     revalidatePath('/', 'layout')
+    revalidatePath('/portals/dashboard', 'layout')
     redirect('/portals/dashboard')
 }
 

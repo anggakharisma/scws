@@ -17,6 +17,9 @@ export const usersTable = sqliteTable("users", {
         .$onUpdate(() => sql`(CURRENT_TIMESTAMP)`),
 });
 
+export const User = typeof usersTable.$inferSelect;
+export const UserInsert = typeof usersTable.$inferInsert;
+
 export const rolesTable = sqliteTable('roles', {
     id: int().primaryKey({ autoIncrement: true }),
     name: text().notNull(),

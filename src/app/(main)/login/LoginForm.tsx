@@ -1,9 +1,11 @@
 "use client"
+import { createClient } from '@/utils/supabase/client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Divider, TextField, Typography } from '@mui/material';
+import { useActionState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { login } from './action'
+import { login } from './action';
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(8, 'Password must be at least 8 characters long'),
@@ -12,21 +14,20 @@ const loginSchema = z.object({
 export type FormDataCustom = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
+  const supabase = createClient()
+  const [state, formAction, pending] = useActionState(login, {
+    message: '',
+  })
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormDataCustom>({
     resolver: zodResolver(loginSchema)
   });
 
-  const onSubmit = async (data: FormDataCustom) => {
-    console.log(data)
-    // await login(data)
-  };
-
   return (
     <>
       <Box
         component="form"
-        onSubmit={handleSubmit(onSubmit)}
+        action={formAction}
         position='relative'
         sx={{
           width: '100%',
@@ -48,6 +49,9 @@ export default function LoginForm() {
           <Typography align='left' variant="h4" gutterBottom>Sign In</Typography>
           <Typography align='left' variant="body1" gutterBottom>Welcome back</Typography>
         </Box>
+        {state.message && <Alert sx={{
+          my: 2
+        }} severity="error">{state.message}</Alert>}
         <TextField
           autoFocus
           {...register('email')}
@@ -73,8 +77,14 @@ export default function LoginForm() {
           }}
         />
 
-        <Button className="bg-secondary text-white font-medium" type="submit" variant="contained" color="primary" size='large' fullWidth>
+        <Button disabled={pending} className="bg-secondary text-white font-medium" type="submit" variant="contained" color="primary" size='large' fullWidth>
           Login
+        </Button>
+        <Button className="bg-secondary text-white font-medium" type="button" variant="contained" color="primary" size='large' fullWidth onClick={async () => {
+          await supabase.auth.signOut()
+
+        }}>
+          Logout
         </Button>
       </Box>
     </>
