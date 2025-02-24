@@ -1,13 +1,7 @@
-import ArtsCulture from "@/app/assets/images/arts_and_culture.jpg";
-import Awards from "@/app/assets/images/awards.jpg";
-import Career from "@/app/assets/images/career.jpg";
+import Activity from "@/app/assets/icons/activity.svg";
 import Hero from "@/app/assets/images/hero.jpg";
 import Ignite from "@/app/assets/images/ignites.jpg";
-import Teacher from "@/app/assets/images/teachers.jpg";
-import Activity from "@/app/assets/icons/activity.svg";
-import Graduates from "@/app/assets/icons/graduates.svg";
 import Image from "next/image";
-import InfoCardImage, { InfoDetailsText } from "./InfoCardImage";
 
 // !TODO: add some animation on load and hover on activity card
 export default function Home() {
@@ -111,56 +105,6 @@ export default function Home() {
             />
           </div>
 
-          <InfoCardImage
-            span={2}
-            image={ArtsCulture.src}
-            description={<p className="text-black"></p>}
-            classCustom="p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer"
-          >
-            <div className="bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full"></div>
-            <InfoDetailsText>{"ARTS & CULUTRE"}</InfoDetailsText>
-          </InfoCardImage>
-
-          <InfoCardImage
-            image={Teacher.src}
-            description={<p className="text-black"></p>}
-            classCustom="p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer"
-          >
-            <div className="bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full"></div>
-            <InfoDetailsText>TEACHERS</InfoDetailsText>
-          </InfoCardImage>
-
-          <InfoCardImage
-            description={<p className="text-white"></p>}
-            image={Awards.src}
-            classCustom="p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer"
-          >
-            <div className="bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full"></div>
-            <InfoDetailsText>AWARDS</InfoDetailsText>
-          </InfoCardImage>
-          <div className="p-8 bg-white min-h-56 flex flex-col justify-center hover:cursor-pointer gap-2 px-16">
-            <Image
-              className="self-start"
-              src={Graduates}
-              width={24}
-              height={24}
-              alt="activity icon"
-            />
-            <h3 className="text-black font-medium md:text-3xl text-3xl">
-              GRADUATES
-            </h3>
-          </div>
-
-          <InfoCardImage
-            description={<p></p>}
-            image={Career.src}
-            classCustom="p-8 bg-gray-400 min-h-56 flex justify-center items-center relative hover:cursor-pointer"
-          >
-            <div className="bg-black opacity-40 absolute top-0 left-0 bottom-0 right-0 w-full h-full hover:cursor-pointer"></div>
-            <h3 className="text-white font-medium md:text-3xl text-xl z-10">
-              CARRERS
-            </h3>
-          </InfoCardImage>
 
           <div className="p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer">
             <h3 className="text-secondary font-medium md:text-3xl text-xl">

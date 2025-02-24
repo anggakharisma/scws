@@ -9,6 +9,7 @@ interface InfoCardImageProps {
 export const InfoDetailsText = ({ children }: { children: React.ReactNode }) => (
   <h3 className='text-white font-medium md:text-2xl text-xl z-10 text-center'>{children}</h3>
 )
+
 const InfoCardImage = ({
   children,
   image,

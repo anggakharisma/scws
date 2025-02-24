@@ -27,7 +27,7 @@ export default function RootLayout({
           className={`${roboto.className}`}
         >
           <Navbar />
-          <main className="mt-4 min-h-screen w-11/12 md:w-3/4 mx-auto">
+          <main className="mt-4 min-h-screen w-11/12 md:w-3/4 mx-auto border-r-gray-400 border-l-400">
             {children}
           </main>
           <Footer />
