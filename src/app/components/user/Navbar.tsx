@@ -1,16 +1,15 @@
+import MailIcon from "@mui/icons-material/Mail";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
 import {
-  Drawer,
-  Toolbar,
   Box,
+  Drawer,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Divider,
+  Typography
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import Link from "next/link";
 
 const drawerWidth = 240;
@@ -24,7 +23,9 @@ export default function NavUser() {
         [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
       }}
     >
-      <Toolbar />
+      <Typography sx={{
+        p: 2
+      }} variant="h6" align="center">SCWS</Typography>
       <Box sx={{ overflow: "auto" }}>
         <List>
           {[
@@ -44,7 +45,6 @@ export default function NavUser() {
             </Link>
           ))}
         </List>
-        <Divider />
       </Box>
     </Drawer>
   );

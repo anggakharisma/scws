@@ -1,5 +1,5 @@
 "use client";
-import { Button, Card, CardActions, CardContent, Divider, Grid2, Typography } from "@mui/material";
+import { Card, CardContent, Divider, Grid2, Typography } from "@mui/material";
 
 export default function DashboardItems() {
   return (
@@ -14,11 +14,10 @@ export default function DashboardItems() {
         <Grid2 size={4}>
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
-
+              <Typography variant="h6">
+                Information
+              </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Check Report Detail</Button>
-            </CardActions>
           </Card>
         </Grid2>
 

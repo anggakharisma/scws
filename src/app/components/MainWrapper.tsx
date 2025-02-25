@@ -1,9 +1,10 @@
 "use client"
 
-import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Breadcrumbs, Button, CssBaseline, Link, Toolbar, Typography } from "@mui/material";
 import NavUser from "./user/Navbar";
 import { createClient } from "@/utils/supabase/client";
 import { redirect } from "next/navigation";
+import { NavigateNext } from "@mui/icons-material";
 
 const drawerWidth = 240;
 export default function MainWrapper({
@@ -24,7 +25,12 @@ export default function MainWrapper({
           <Typography variant="h6" noWrap component="div" sx={{
             flexGrow: 1
           }}>
-            SCWS
+            <Breadcrumbs separator={<NavigateNext />} aria-label="breadcrumb">
+              <Link underline="hover" color="inherit" href="/portals/dashboard">
+                SCWS
+              </Link>
+              <Typography sx={{ color: 'text.primary' }}>Portals</Typography>
+            </Breadcrumbs>
           </Typography>
           <Button color="inherit" onClick={async () => {
             await supabase.auth.signOut()

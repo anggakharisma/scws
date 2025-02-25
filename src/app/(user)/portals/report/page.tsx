@@ -1,9 +1,9 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
-export default async function ReportPage() {
+export default async function DashboardPage() {
   return (
     <Container>
-      <p>Report Page</p>
+      <Typography>Report Page</Typography>
     </Container>
   )
 }
