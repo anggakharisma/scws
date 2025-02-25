@@ -23,7 +23,7 @@ export async function login(_prevState: any, formData: FormData) {
     }
 
     revalidatePath('/', 'layout')
-    redirect('/portals/dashboard')
+    redirect('/')
 }
 
 export async function signup(formData: FormDataCustom) {

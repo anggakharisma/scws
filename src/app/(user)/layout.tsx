@@ -6,6 +6,7 @@ import {
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import MainWrapper from "../components/MainWrapper";
+import UserLayoutProvider from './Provider'
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,14 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider theme={theme}>
-      <html lang="en">
-        <body className={`${roboto.className}`}>
-          <MainWrapper>
-            {children}
-          </MainWrapper>
-        </body>
-      </html>
-    </ThemeProvider>
+    <UserLayoutProvider>
+      <ThemeProvider theme={theme}>
+        <html lang="en">
+          <body className={`${roboto.className}`}>
+            <MainWrapper>
+              {children}
+            </MainWrapper>
+          </body>
+        </html>
+      </ThemeProvider>
+    </UserLayoutProvider>
   );
 }

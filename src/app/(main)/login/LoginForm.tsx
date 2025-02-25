@@ -1,5 +1,4 @@
 "use client"
-import { createClient } from '@/utils/supabase/client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Alert, Box, Button, TextField, Typography } from '@mui/material';
 import { useActionState } from 'react';
@@ -14,7 +13,6 @@ const loginSchema = z.object({
 export type FormDataCustom = z.infer<typeof loginSchema>;
 
 export default function LoginForm() {
-  const supabase = createClient()
   const [state, formAction, pending] = useActionState(login, {
     message: '',
   })
@@ -79,12 +77,6 @@ export default function LoginForm() {
 
         <Button disabled={pending} className="bg-secondary text-white font-medium" type="submit" variant="contained" color="primary" size='large' fullWidth>
           Login
-        </Button>
-        <Button className="bg-secondary text-white font-medium" type="button" variant="contained" color="primary" size='large' fullWidth onClick={async () => {
-          await supabase.auth.signOut()
-
-        }}>
-          Logout
         </Button>
       </Box>
     </>

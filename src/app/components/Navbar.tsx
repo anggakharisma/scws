@@ -6,6 +6,7 @@ import LinkItem from "../(main)/login/LinkItem";
 export default async function Navbar() {
   const supabase = await createClient()
   const user = await supabase.auth.getUser()
+  console.log(user.data.user)
 
   return (
     <header className="w-full py-4 flex shadow-md sticky bg-white">
@@ -17,7 +18,7 @@ export default async function Navbar() {
           <LinkItem name="Admission" href="/admission" />
           <LinkItem name="Programs" href="/programs" />
           {
-            user ?
+            user.data.user ?
               <LinkItem name="Portals" href="/portals/dashboard" /> :
               <LinkItem name="Login" href="/login" />
           }

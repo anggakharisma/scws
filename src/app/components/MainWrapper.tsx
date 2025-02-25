@@ -1,5 +1,9 @@
+"use client"
+
 import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from "@mui/material";
 import NavUser from "./user/Navbar";
+import { createClient } from "@/utils/supabase/client";
+import { redirect } from "next/navigation";
 
 const drawerWidth = 240;
 export default function MainWrapper({
@@ -7,6 +11,8 @@ export default function MainWrapper({
 }: {
   children: React.ReactNode;
 }) {
+  const supabase = createClient()
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -20,7 +26,10 @@ export default function MainWrapper({
           }}>
             SCWS
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onClick={async () => {
+            await supabase.auth.signOut()
+            redirect('/')
+          }}>Logout</Button>
         </Toolbar>
       </AppBar>
       <NavUser />
