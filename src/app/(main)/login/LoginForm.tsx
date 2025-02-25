@@ -1,7 +1,7 @@
 "use client"
 import { createClient } from '@/utils/supabase/client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Alert, Box, Button, Divider, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, TextField, Typography } from '@mui/material';
 import { useActionState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -19,7 +19,7 @@ export default function LoginForm() {
     message: '',
   })
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormDataCustom>({
+  const { register, formState: { errors } } = useForm<FormDataCustom>({
     resolver: zodResolver(loginSchema)
   });
 

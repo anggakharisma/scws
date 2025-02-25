@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 import { theme } from "@/theme";
 import {
-    ThemeProvider
+  ThemeProvider
 } from "@mui/material";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -11,6 +11,7 @@ const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
+export const fetchCache = 'force-no-store';
 
 export const metadata: Metadata = {
   title: "SCWS",

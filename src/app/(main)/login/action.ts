@@ -6,7 +6,8 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 import { FormDataCustom } from './LoginForm'
 
-export async function login(prevState: any, formData: FormData) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function login(_prevState: any, formData: FormData) {
     const supabase = await createClient()
 
 
@@ -22,7 +23,6 @@ export async function login(prevState: any, formData: FormData) {
     }
 
     revalidatePath('/', 'layout')
-    revalidatePath('/portals/dashboard', 'layout')
     redirect('/portals/dashboard')
 }
 
@@ -42,8 +42,7 @@ export async function signup(formData: FormDataCustom) {
         redirect('/error')
     }
 
-    revalidatePath('/', 'layout')
-    redirect('/')
+    redirect('/portals/dashboard')
 }
 
 export async function signout() {

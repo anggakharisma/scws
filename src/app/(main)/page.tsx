@@ -17,7 +17,7 @@ export default function Home() {
             Enroll Now
           </button>
         </div>
-        <div className="w-full md:w-3/6 h-full bg-cover">
+        <div className="w-full lg:w-3/6 h-full bg-cover">
           <Image
             className="rounded-[16px]"
             src={Hero}
@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       <div className="mt-24 flex flex-col lg:flex-row gap-8 w-10/12 mx-auto mb-12">
-        <div className="w-4/6 h-[480px] relative rounded-lg">
+        <div className="w-full md:w-4/6 h-[480px] relative rounded-lg">
           <div className="absolute w-full h-full -top-4 -left-4 bg-primary rounded-lg"></div>
           <div className="absolute w-full h-full -top-8 -left-8 bg-secondary -z-10 rounded-lg"></div>
           <Image

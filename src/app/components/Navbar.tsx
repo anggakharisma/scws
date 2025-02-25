@@ -1,36 +1,11 @@
-"use client"
-import { createClient } from "@/utils/supabase/client";
-import clsx from "clsx";
+import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from "react";
-
-const LinkItem = ({ name, href }: { name: string, href: string }) => {
-  const pathname = usePathname()
+import LinkItem from "../(main)/login/LinkItem";
 
 
-  return <li
-    className={clsx(
-      {
-        'border-primary border-b-2': href === pathname
-      },
-      'text-sm font-medium tracking-wide uppercase text-stone-700 hover:cursor-pointer hover:text-primary pb-1'
-    )}
-  ><Link href={href}>{name}</Link></li>
-}
-
-export default function Navbar() {
-  const [user, setUser] = useState<any>(null)
-  const supabase = createClient();
-
-  useEffect(() => {
-    supabase.auth.getUser().then(user => {
-      setUser(user.data.user)
-    })
-
-  }, [supabase.auth])
-
-  console.log(user)
+export default async function Navbar() {
+  const supabase = await createClient()
+  const user = await supabase.auth.getUser()
 
   return (
     <header className="w-full py-4 flex shadow-md sticky bg-white">
@@ -40,7 +15,6 @@ export default function Navbar() {
           <LinkItem name="Home" href="/" />
           <LinkItem name="About Us" href="/about-us" />
           <LinkItem name="Admission" href="/admission" />
-          <LinkItem name="Programs" href="/programs" />
           <LinkItem name="Programs" href="/programs" />
           {
             user ?
