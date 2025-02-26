@@ -6,14 +6,14 @@ import { usePathname } from "next/navigation";
 const LinkItem = ({ name, href }: { name: string, href: string }) => {
   const pathname = usePathname()
 
-  return <li
+  return <Link href={href}
     className={clsx(
       {
         'border-primary border-b-2': href === pathname
       },
       'text-sm font-medium tracking-wide uppercase text-stone-700 hover:cursor-pointer hover:text-primary pb-1'
     )}
-  ><Link href={href}>{name}</Link></li>
+  >{name}</Link>
 }
 
-export default LinkItem;
+      export default LinkItem;

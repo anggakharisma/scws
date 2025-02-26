@@ -25,7 +25,7 @@ export default function Home() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute -bottom-[4rem] lg:-bottom-14 flex left-1/2 lg:left-1/4  -translate-x-1/2 shadow-lg rounded-lg">
+        <div className="absolute -bottom-[4rem] lg:-bottom-14 flex left-1/2 lg:left-1/4  -translate-x-1/2 shadow-lg rounded-lg bg-white">
           {[
             {
               count: "15+",
@@ -47,7 +47,7 @@ export default function Home() {
             return (
               <div
                 key={id}
-                className="lg:flex flex-col items-center bg-white p-6 py-8 lg:p-8"
+                className="lg:flex flex-col items-center p-6 py-8 lg:p-8"
               >
                 <h3 className="font-bold">{item.count}</h3>
                 {item.title}

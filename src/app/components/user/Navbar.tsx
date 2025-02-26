@@ -2,6 +2,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import {
   Box,
+  Divider,
   Drawer,
   List,
   ListItem,
@@ -11,9 +12,12 @@ import {
   Typography
 } from "@mui/material";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const drawerWidth = 240;
 export default function NavUser() {
+  const pathname = usePathname()
+
   return (
     <Drawer
       variant="permanent"
@@ -26,6 +30,7 @@ export default function NavUser() {
       <Typography sx={{
         p: 2
       }} variant="h6" align="center">SCWS</Typography>
+      <Divider />
       <Box sx={{ overflow: "auto" }}>
         <List>
           {[
@@ -34,8 +39,8 @@ export default function NavUser() {
             { text: "E-Learning", path: "/portals/e-learning" },
           ].map((item, index) => (
             <Link href={item.path} key={item.text}>
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+              <ListItem key={item.text}>
+                <ListItemButton selected={item.path === pathname}>
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                   </ListItemIcon>
