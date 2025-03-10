@@ -5,6 +5,7 @@ import DashboardItems from "./Items";
 export default async function DashboardPage() {
   const supabase = await createClient()
   const user = await supabase.auth.getUser()
+
   console.log(user.data!.user?.id)
   return (
     <Container>

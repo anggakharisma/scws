@@ -1,9 +1,9 @@
 "use client";
 import { Info, Warning } from "@mui/icons-material";
 import { Divider, Grid2, Link, Stack, Typography } from "@mui/material";
-import Alert from'@mui/material/Alert';
-import Card from'@mui/material/Card';
-import CardContent from'@mui/material/CardContent';
+import Alert from '@mui/material/Alert';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export default function DashboardItems() {
   return (
@@ -26,7 +26,7 @@ export default function DashboardItems() {
         my: 2,
         mb: 4
       }} />
-      <Grid2 container spacing={8} rowSpacing={4}>
+      <Grid2 container spacing={4} rowSpacing={4}>
         <Grid2 size={4}>
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
@@ -48,7 +48,6 @@ export default function DashboardItems() {
             </CardContent>
           </Card>
         </Grid2>
-
       </Grid2>
     </>
   )

@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import { db } from '.'
-import { rolesUserTable, usersTable } from './schema'
+import { rolesUserTable, userSchema } from './schema'
 
 const syncSupabase = async () => {
     const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SERVICE_ROLE!, {
@@ -18,7 +18,7 @@ syncSupabase().then(async d => {
 
     supabaseUsers.data.users.forEach(async user => {
         if (user.id && user.email) {
-            await db.insert(usersTable).values({
+            await db.insert(userSchema).values({
                 supabase_id: user.id,
                 email: user.email,
             }).onConflictDoNothing()

@@ -16,4 +16,4 @@ const LinkItem = ({ name, href }: { name: string, href: string }) => {
   >{name}</Link>
 }
 
-      export default LinkItem;
+export default LinkItem;

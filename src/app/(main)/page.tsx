@@ -1,7 +1,23 @@
 import Activity from "@/app/assets/icons/activity.svg";
 import Hero from "@/app/assets/images/hero.jpg";
 import Ignite from "@/app/assets/images/ignites.jpg";
+import clsx from "clsx";
 import Image from "next/image";
+
+const Circle = ({ size, color }: { size: number, color: string }) => {
+  console.log(size)
+  console.log(
+    `w-${size} h-${size}`,
+  )
+  return (
+    <div className={clsx(
+      'rounded-full',
+      `w-${size} h-${size}`,
+      `${color}`,
+    )}>
+    </div>
+  )
+}
 
 // !TODO: add some animation on load and hover on activity card
 export default function Home() {
@@ -87,38 +103,75 @@ export default function Home() {
         </div>
       </div>
 
+
+
+      <div className="w-11/12 mx-auto my-24">
+        <div className="flex gap-4 items-center my-4 mb-8">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-1">
+              <Circle size={4} color="bg-primary" />
+              <Circle size={4} color="bg-secondary" />
+              <Circle size={4} color="bg-secondary" />
+            </div>
+            <div className="flex gap-1">
+              <div className="grow"></div>
+              <Circle size={4} color="bg-primary" />
+              <Circle size={4} color="bg-secondary" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-extrabold">
+            Facilities
+          </h1>
+
+        </div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta deleniti autem ex recusandae dolore aliquid voluptates quibusdam, consequuntur delectus! Veniam ab fugiat nihil perferendis adipisci facilis voluptas explicabo quisquam.</p>
+
+      </div>
+
       {
         // Info Section
       }
-      <div className="w-11/12 mx-auto shadow-lg bg-white">
-        <div className="md-0 md:mt-24 gap-0 w min-w-40 mb-10 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 justify-between items-center relative">
-          <div className="p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer">
-            <h3 className="text-primary font-medium md:text-3xl text-xl">
-              Activity
-            </h3>
-            <Image
-              className="self-end items-end"
-              src={Activity}
-              width={60}
-              height={60}
-              alt="activity icon"
-            />
-          </div>
-
-
-          <div className="p-8 bg-secondary min-h-56 flex justify-center items-center hover:cursor-pointer">
-            <h3 className="text-secondary font-medium md:text-3xl text-xl">
-              GRADUATES
-            </h3>
-          </div>
+      <div className="w-11/12 mb-24 mx-auto shadow-lg rounded-lg flex flex-wrap gap-4">
+        <div className="p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer rounded-lg basis-80">
+          <h3 className="text-primary font-medium md:text-3xl text-xl">
+            Activity
+          </h3>
+          <Image
+            className="self-end items-end"
+            src={Activity}
+            width={60}
+            height={60}
+            alt="activity icon"
+          />
         </div>
-      </div>
 
-      <div className="w-11/12 mx-auto">
-        <h1 className="text-4xl lg:text-3xl w-full lg:w-4/6 font-medium mb-8">
-          NEWS
-        </h1>
-        <p></p>
+        <div className="p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer rounded-lg flex-1">
+          <h3 className="text-primary font-medium md:text-3xl text-xl">
+            Activity
+          </h3>
+          <Image
+            className="self-end items-end"
+            src={Activity}
+            width={60}
+            height={60}
+            alt="activity icon"
+          />
+        </div>
+
+        <div className="p-8 bg-secondary min-h-56 flex flex-col justify-between transition-all hover:cursor-pointer rounded-lg basis-80">
+          <h3 className="text-primary font-medium md:text-3xl text-xl">
+            Activity
+          </h3>
+          <Image
+            className="self-end items-end"
+            src={Activity}
+            width={60}
+            height={60}
+            alt="activity icon"
+          />
+        </div>
+
       </div>
     </div>
   );
