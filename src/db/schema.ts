@@ -42,7 +42,13 @@ export const rolesUserSchema = sqliteTable('roles_users', {
     user_id: text().notNull(),
 })
 
-export const subjectSchema = sqliteTable('subject', {
+export const subjectSchema = sqliteTable('subjects', {
+    id: int().primaryKey({ autoIncrement: true }),
+    name: text().notNull(),
+    description: text(),
+})
+
+export const scoreSchema = sqliteTable('user_scores', {
     id: int().primaryKey({ autoIncrement: true }),
     name: text().notNull(),
     description: text(),
